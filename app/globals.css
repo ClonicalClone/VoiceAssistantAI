@@ -24,3 +24,498 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+/* From Uiverse.io by narmesh_sah */
+.orb-container {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  border-radius: 50%;
+  rotate: 90deg;
+  cursor: pointer;
+  filter: drop-shadow(0 0 6px #ff3e1c88) drop-shadow(0 0 6px #1c8cff88);
+  transition: all 0.3s ease;
+}
+
+.orb {
+  position: absolute;
+  width: 200px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: #060606;
+  filter: blur(24px);
+  transition: all 0.3s ease;
+}
+
+.orb-container:hover .orb {
+  width: 220px;
+  animation: rotate 6s infinite;
+}
+
+@keyframes rotate {
+  50% {
+    transform: rotate(180deg);
+  }
+}
+
+.orb-inner {
+  position: absolute;
+  left: -120%;
+  top: -25%;
+  width: 160%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: #ff3e1c;
+  clip-path: polygon(50% 0%,
+      61% 35%,
+      98% 35%,
+      68% 57%,
+      79% 91%,
+      50% 70%,
+      21% 91%,
+      32% 57%,
+      2% 35%,
+      39% 35%);
+  animation: rotate 6s linear infinite;
+  transition: all 0.3s ease;
+}
+
+.orb-inner:nth-child(2) {
+  left: auto;
+  right: -120%;
+  top: auto;
+  bottom: -25%;
+  background: #1c8cff;
+  animation-duration: 8s;
+  clip-path: polygon(20% 0%,
+      0% 20%,
+      30% 50%,
+      0% 80%,
+      20% 100%,
+      50% 70%,
+      80% 100%,
+      100% 80%,
+      70% 50%,
+      100% 20%,
+      80% 0%,
+      50% 30%);
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.orb-container:hover .orb .orb-inner {
+  width: 170%;
+}
+
+/* From Uiverse.io by 3bdel3ziz-T */
+/*👉The styles has written with scss
+ and all on my GitHub check it out now 👾!
+ and hit the star ⭐ button*/
+
+/*I hope if I win one time then
+- (✔) "vote me" to help me reaching it 🏆🥇*/
+.box .button-container .button .inner1 .inner2,
+.box .button-container .button .inner1,
+.box .button-container .button,
+.box .button-container,
+.box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.box input[type="checkbox"] {
+  appearance: none;
+}
+
+.box * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.box {
+  background: linear-gradient(to bottom, #2d2f2f, #1e1f20);
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+}
+
+.box::before,
+.box::after {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  top: 20px;
+  display: block;
+  transform: skewY(-15deg);
+  filter: blur(15px);
+  width: 80%;
+  animation: breath 2s infinite 0s ease-in-out;
+}
+
+.box::before {
+  background-color: #353737;
+  height: 100px;
+}
+
+.box::after {
+  background: linear-gradient(to bottom, #2f3131, #262729);
+  top: 200px;
+  height: 400px;
+}
+
+.box .button-container {
+  position: relative;
+  z-index: 10;
+  width: fit-content;
+  height: fit-content;
+  scale: 0.9;
+}
+
+.box .button-container::before,
+.box .button-container::after {
+  content: "";
+  position: absolute;
+  top: calc(100% + 20px);
+  border-radius: 50%;
+  display: block;
+  width: 6px;
+  height: 6px;
+  background-color: #121415;
+  animation: brightness 3s infinite 0s ease-in-out;
+  transition: 300ms;
+  filter: brightness(1.4);
+  z-index: 0;
+}
+
+.button-container:has(#input:checked)::before {
+  box-shadow:
+    0 0 10px 6px #0e3cbc,
+    inset 0 0 4px 3px #86f3f9,
+    inset 0 0 0px 0px #0e3cbc,
+    0 0 15px 2px #0e3cbc,
+    0 0 3px 1px #070909,
+    inset 0 0 15px 10px #0e3cbc,
+    inset 0 2px 10px 10px #0e3cbc;
+}
+
+.box .button-container::after {
+  width: 75px;
+  height: 75px;
+  background-color: #0e3cbc;
+  left: calc(50% - 37.5px);
+  top: 65%;
+  filter: brightness(2) blur(10px);
+  box-shadow:
+    0px -2px 10px 0px #0d72e6,
+    0 0 20px 0 #0e3cbc;
+  scale: 0;
+}
+
+.button-container:has(#input:checked)::after {
+  animation: scaleUP 0.3s ease-out 0s 1 normal both;
+}
+
+.box .button-container .button {
+  width: 200px;
+  height: 200px;
+  background-color: #070909;
+  border-radius: 45px;
+  padding: 6.5px;
+  z-index: 1;
+  box-shadow: 0 25px 20px -20px #121415;
+  transition: 500ms;
+  overflow: hidden;
+  position: relative;
+}
+
+.button-container:has(#input:checked) .button {
+  box-shadow:
+    0 60px 15px -80px #0d72e6,
+    0 60px 15px -75px #0d72e6,
+    0 65px 15px -65px #0e3cbc,
+    0 25px 20px -20px #121415;
+}
+
+.button::before {
+  content: "";
+  background: #0d72e6;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  box-shadow: 0 0 20px 30px #0d72e6;
+  scale: 0;
+}
+
+.button-container:has(#input:checked) .button::before {
+  animation:
+    scaleUP 0.3s 0s ease-in 1 normal both,
+    spin 6s 0s ease-in-out infinite normal both,
+    brightness 3s 4.5s ease-in-out infinite normal both,
+    breath 4s infinite 5s ease-in-out;
+}
+
+.box .button-container .button .inner1 {
+  box-shadow:
+    inset 0 2px 0 0 #565858,
+    inset 0 2px 0 0 #3e4141;
+  border-radius: 38.5px;
+  width: 100%;
+  height: 100%;
+  background: conic-gradient(#3e4141 0deg,
+      #3e4141 10deg,
+      #3e4141 20deg,
+      #444647 30deg,
+      #444647 40deg,
+      #565858 50deg,
+      #3e4141 60deg,
+      #2d2f2f 70deg,
+      #2d2f2f 80deg,
+      #2d2f2f 90deg,
+      #2d2f2f 100deg,
+      #2d2f2f 110deg,
+      #2d2f2f 120deg,
+      #181a1b 130deg,
+      #121415 140deg,
+      #181a1b 150deg,
+      #181a1b 160deg,
+      #181a1b 170deg,
+      #181a1b 180deg,
+      #181a1b 190deg,
+      #181a1b 200deg,
+      #121415 210deg,
+      #121415 220deg,
+      #121415 230deg,
+      #2d2f2f 240deg,
+      #2d2f2f 250deg,
+      #2d2f2f 260deg,
+      #2d2f2f 270deg,
+      #2d2f2f 280deg,
+      #2d2f2f 290deg,
+      #2d2f2f 300deg,
+      #565858 310deg,
+      #444647 320deg,
+      #3e4141 330deg,
+      #3e4141 340deg,
+      #3e4141 350deg,
+      #3e4141 360deg);
+  padding: 24px;
+  position: relative;
+  overflow: hidden;
+  transition:
+    scale 80ms ease,
+    box-shadow 40ms ease;
+}
+
+.button-container:has(#input:checked) .inner1 {
+  box-shadow:
+    inset 0 2px 0 0 #565858,
+    inset 0 2px 0 0 #3e4141,
+    inset 0 -3px 2px -2px #0d72e6;
+}
+
+.box .button-container .button .inner1::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: calc(100% - 4px);
+  z-index: 0;
+  border-radius: 50%;
+  width: 50%;
+  height: 25px;
+  background-color: #0e3cbc;
+  filter: blur(5px) brightness(1.5);
+  scale: 0;
+}
+
+.button-container:has(#input:checked) .inner1::after {
+  animation:
+    breath 1.7s infinite 0s ease-in-out,
+    scaleUP 0.2s ease-out 0s 1 normal both;
+}
+
+.box .button-container .button .inner1 .inner2 {
+  box-sizing: border-box;
+  position: relative;
+  border-radius: 38px;
+  width: 100%;
+  height: 100%;
+  border: 2px solid #444647;
+  border-bottom-width: 0;
+  background: linear-gradient(to bottom, #2d2f2f, #2d2f2f, #565858);
+  background-color: #3e4141;
+  box-shadow:
+    inset 0 12px 25px 0 #181a1b,
+    inset 0 -5px 20px 0px #565858;
+  transition: 500ms;
+  overflow: hidden;
+}
+
+.button-container:has(#input:checked) .inner2 {
+  box-shadow:
+    inset 0 12px 25px 0 #181a1b,
+    inset 0 -5px 20px 0px #565858,
+    inset 0 -7px 7px -7px #0d72e6;
+}
+
+.box .button-container .button .inner1 .inner2::before {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  border-radius: 50%;
+  width: 3px;
+  height: 3px;
+  background-color: #3e4141;
+  filter: blur(3px) brightness(2);
+  animation: move 5s ease-in-out 0s infinite normal both;
+}
+
+.box .button-container .button .inner1 .inner2 .bluetooth {
+  width: 34px;
+  position: relative;
+}
+
+.box .button-container .button .inner1 .inner2 .bluetooth svg {
+  fill: #212324;
+}
+
+.box .button-container .button .inner1 .inner2 .bluetooth::before,
+.box .button-container .button .inner1 .inner2 .bluetooth::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: calc(50% - 3.5px);
+  left: -6.5px;
+  transform: translate(0, -50%);
+  width: 7px;
+  height: 7px;
+  background-color: #212324;
+  border-radius: 50%;
+  box-shadow:
+    1px 1px 1px 0 #565858,
+    inset 1px 1px 0 0 #181a1b;
+}
+
+.box .button-container .button .inner1 .inner2 .bluetooth::after {
+  left: 100%;
+}
+
+.box .button-container .button .inner1:active {
+  scale: 0.98;
+}
+
+.box .button-container .button .inner1:active {
+  box-shadow:
+    inset 0 -3px 2px -2px #0d72e6,
+    inset 0px 5px 10px 10px #181a1b,
+    inset 0px -5px 10px 10px #181a1b;
+}
+
+@keyframes breath {
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.7;
+  }
+}
+
+@keyframes move {
+  0% {
+    transform: translate(0, 0);
+  }
+
+  25% {
+    transform: translate(135px, -5px);
+  }
+
+  50% {
+    transform: translate(135px, 135px);
+  }
+
+  75% {
+    transform: translate(0, 135px);
+  }
+
+  100% {
+    transform: translate(-5px, 0);
+  }
+}
+
+@keyframes spin {
+  1% {
+    transform: rotate(45deg);
+    scale: 1.2;
+  }
+
+  20% {
+    transform: rotate(0);
+    height: 20%;
+    scale: 1;
+  }
+
+  40% {
+    height: 20%;
+    transform: rotate(calc(360deg * 3));
+  }
+
+  80% {
+    transform: rotate(45deg);
+    height: 50%;
+  }
+
+  85% {
+    scale: 1;
+  }
+
+  100%,
+  95% {
+    scale: 1.2;
+    transform: rotate(45deg);
+    width: 100%;
+    height: 100%;
+  }
+}
+
+@keyframes brightness {
+
+  from,
+  to {
+    filter: brightness(1);
+  }
+
+  50% {
+    filter: brightness(1.5);
+  }
+}
+
+@keyframes scaleUP {
+  to {
+    scale: 1;
+  }
+}
+
+@keyframes appeare {
+  to {
+    opacity: 1;
+  }
+}
