@@ -1,0 +1,8 @@
+{
+    "root": "my-app",
+    "build": {
+        "env": {
+            "GROQ_API_KEY": "@groq-api-key"
+        }
+    }
+}
